@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Index</title>
+		<h1>All Articles</h1>
+	</head>
+
+	<body>
+		<p>
+			<ul id= "articles">
+				<% @articles.each do |article| %>
+					<li>
+						<%=link_to article.title, article_path(article), class: 'article_title', id: "article_#{article.id}"%>						
+					</li>
+				<%end%>
+			</ul>
+		</p>
+
+<%= link_to "Create new article", new_article_path, class: "new_article" %>
+	</body>
+</html>
+
